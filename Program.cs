@@ -9,15 +9,15 @@ namespace PropOnChange
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private int _Aproperty;
+        private int _AProperty;
         public int AProperty
         {
-            get { return _Aproperty; }
+            get { return _AProperty; }
             set
             {
-                if (this._Aproperty != value)
+                if (this._AProperty != value)
                 {
-                    _Aproperty = value;
+                    _AProperty = value;
                     if (PropertyChanged != null)
                     { 
                         // If something subscribed to the event
