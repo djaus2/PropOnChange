@@ -19,7 +19,8 @@ namespace PropOnChange
                 {
                     _Aproperty = value;
                     if (PropertyChanged != null)
-                    { // If something subscribed to the event
+                    { 
+                        // If something subscribed to the event
                         OnPropertyChanged("AProperty"); // Raise the event
                     }
                 }
@@ -39,14 +40,7 @@ namespace PropOnChange
     class Program
     {
         static Example example = null;
-        static async Task PseudoDbUpdate(int value)
-        {
-            // Just have an await activity as would a database call
-            Console.WriteLine($"Updating value to {value}");
-            await Task.Run(() => Thread.Sleep(2000));
-            Console.WriteLine($"Updated value.");
-            System.Diagnostics.Debug.WriteLine($"Updated value.");
-        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Starting app.");
@@ -61,6 +55,22 @@ namespace PropOnChange
             Console.WriteLine("Done app!");
         }
 
+        /// <summary>
+        /// Causes await requirement with property update
+        /// </summary>
+        /// <param name="value">The updated value.</param>
+        /// <returns></returns>
+        static async Task PseudoDbUpdate(int value)
+        {
+            // Just have an await activity as would a database call
+            Console.WriteLine($"Updating value to {value}");
+            await Task.Run(() => Thread.Sleep(2000));
+            Console.WriteLine($"Updated value.");
+            System.Diagnostics.Debug.WriteLine($"Updated value.");
+        }
+
+        // Nb: Coded such that handler "knows" which property raised the event 
+        // ... and so can can access the property explicitly
         private static async void Example_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             await PseudoDbUpdate(example.AProperty);
