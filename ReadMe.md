@@ -13,6 +13,6 @@ This is discussed in detail on the blog site at [Blazor Helpers App: 7. Async EF
      - Open the local folder in a Terminal Window _(Right-click in File Explorer)_
      - ```dotnet run```
 2. Run the Notebook from VS Code
-  - Just get the Notebook.dib file from the repository
+  - Just get the **Notebook.dib** file from the repository
   - Set up VS Code for [.NET Interactive Notebooks](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.dotnet-interactive-vscode)
   - Run the app ```Run All```
