@@ -10,7 +10,7 @@ This is discussed in detail on the blog site at [Blazor Helpers App: 7. Async EF
    1. Build and run from Visual Studio
    2. OR Run from VS Code
    3. OR from a Command Line
-     - Open the local folder in a Terminal Window __(Right-click in File Explorer)_
+     - Open the local folder in a Terminal Window _(Right-click in File Explorer)_
      - ```dotnet run```
 2. Run the Notebook from VS Code
   - Just get the Notebook.dib file from the repository
