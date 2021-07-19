@@ -37,24 +37,10 @@ namespace PropOnChange
             }
         }
     }
+
+
     class Program
     {
-        static Example example = null;
-
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Starting app.");
-
-            example = new Example();
-            example.PropertyChanged += Example_PropertyChanged;
-
-            example.AProperty = 137;
-
-            //Next line is just to let the the above complete
-            Thread.Sleep(4000);
-            Console.WriteLine("Done app!");
-        }
-
         /// <summary>
         /// Causes await requirement with property update
         /// </summary>
@@ -76,5 +62,21 @@ namespace PropOnChange
             await PseudoDbUpdate(example.AProperty);
             Console.WriteLine("Property Changed");
         }
+        static Example example = null;
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Starting app.");
+
+            example = new Example();
+            example.PropertyChanged += Example_PropertyChanged;
+
+            example.AProperty = 137;
+
+            //Next line is just to let the the above complete
+            Thread.Sleep(4000);
+            Console.WriteLine("Done app!");
+        }
+
     }
 }
